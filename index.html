@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Búsqueda del Tesoro 🕵️‍♀️</title>
-    
 <style>
 body {
     font-family: sans-serif;
@@ -62,7 +61,7 @@ const pistas = [
     "2️⃣ Busca en la heladera algo que te llame la atención ❄️. Hay un mini premio esperándote.",
     "3️⃣ Luego ve al reloj o al lugar donde miras la hora 🕒. Encontrarás otra pista.",
     "4️⃣ Sigue a la planta grande y revisa debajo de sus hojas 🌿. Casi llegas al final.",
-    "5️⃣ Finalmente, revisa tu armario/bolso/zapato favorito 👕👟. Allí te espera tu remera 🎉"
+    "5️⃣ Finalmente, revisa tu armario/bolso/zapato favorito 👀. La sorpresa que buscabas te espera 🎁"
 ];
 
 let indice = 0;
@@ -75,7 +74,7 @@ boton.addEventListener("click", () => {
         pistaElem.textContent = pistas[indice];
         indice++;
         if (indice === pistas.length) {
-            boton.textContent = "¡Misión cumplida! 🎁";
+            boton.textContent = "¡Sorpresa encontrada! 🎉";
             boton.disabled = true;
         }
     }
@@ -84,3 +83,4 @@ boton.addEventListener("click", () => {
 
 </body>
 </html>
+
