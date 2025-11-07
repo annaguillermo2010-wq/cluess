@@ -2,23 +2,84 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Búsqueda del Tesoro 🕵️‍♀️</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Búsqueda del Tesoro 🕵️‍♀️</title>
 <style>
-body{font-family:sans-serif; text-align:center; background:#f7f7f7; padding:20px;}
-.card{background:white; padding:20px; border-radius:10px; display:inline-block; box-shadow:0 5px 15px rgba(0,0,0,.1); max-width:600px;}
-p{font-size:18px; margin:10px 0;}
+body {
+    font-family: sans-serif;
+    background-color: #bcede8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+.card {
+    background-color: #1d70b4;
+    color: white;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.2);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+}
+h1 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+p {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+button {
+    background-color: #bcede8;
+    color: #1d70b4;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    opacity: 0.8;
+}
 </style>
 </head>
 <body>
+
 <div class="card">
   <h1>¡Tu misión comienza! 🕵️‍♀️</h1>
-  <p>1️⃣ Ve a la taza de café o donde empieza tu día ☕</p>
-  <p>2️⃣ Busca en la heladera algo que te llame la atención ❄️</p>
-  <p>3️⃣ Luego ve al reloj o al lugar donde miras la hora 🕒</p>
-  <p>4️⃣ Sigue a la planta grande y revisa debajo de sus hojas 🌿</p>
-  <p>5️⃣ Finalmente, revisa tu armario/bolso/zapato favorito 👕👟</p>
-  <p>¡Felicidades! 🎉 Allí te espera tu remera.</p>
+  <p id="pista">Escanea y prepárate… tu primera pista está lista.</p>
+  <button id="siguiente">A seguir buscando…</button>
 </div>
+
+<script>
+const pistas = [
+    "1️⃣ Ve a la taza de café o donde empieza tu día ☕. Busca un pequeño objeto que te guíe.",
+    "2️⃣ Busca en la heladera algo que te llame la atención ❄️. Hay un mini premio esperándote.",
+    "3️⃣ Luego ve al reloj o al lugar donde miras la hora 🕒. Encontrarás otra pista.",
+    "4️⃣ Sigue a la planta grande y revisa debajo de sus hojas 🌿. Casi llegas al final.",
+    "5️⃣ Finalmente, revisa tu armario/bolso/zapato favorito 👕👟. Allí te espera tu remera 🎉"
+];
+
+let indice = 0;
+
+const pistaElem = document.getElementById("pista");
+const boton = document.getElementById("siguiente");
+
+boton.addEventListener("click", () => {
+    if (indice < pistas.length) {
+        pistaElem.textContent = pistas[indice];
+        indice++;
+        if (indice === pistas.length) {
+            boton.textContent = "¡Misión cumplida! 🎁";
+            boton.disabled = true;
+        }
+    }
+});
+</script>
+
 </body>
 </html>
